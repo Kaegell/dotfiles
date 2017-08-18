@@ -1,0 +1,12 @@
+#!/bin/bash
+#apply_wal_scheme
+#applies the colorscheme to the major WM elements (i3 & polybar)
+#actualizes the lightdm background in consequence
+
+wallpaper=$(cat ~/.cache/wal/wal)
+cp $wallpaper /home/kaegell/Pictures/Misc/lightdm.jpg
+i3-msg reload
+#pkill polybar
+#sleep 1
+#polybar -r topbar& > /dev/null 2>&1
+echo "" >> ~/.config/polybar/config
