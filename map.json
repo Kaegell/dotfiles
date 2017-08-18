@@ -11,6 +11,10 @@
 		{
 			"file":		"zshrc",
 			"target":	"~/.zshrc"
+		},
+		{
+			"file":		"bashrc",
+			"target":	"~/.bashrc"
 		}
 	]
 }
