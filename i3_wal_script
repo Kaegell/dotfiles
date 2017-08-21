@@ -6,7 +6,9 @@
 wallpaper=$(cat ~/.cache/wal/wal)
 cp $wallpaper /home/kaegell/Pictures/Misc/lightdm.jpg
 i3-msg reload
-#pkill polybar
-#sleep 1
-#polybar -r topbar& > /dev/null 2>&1
-echo "" >> ~/.config/polybar/config
+pres=$(pgrep foobar)
+if [[ -z $pres ]]; then
+	polybar -r topbar& > /dev/null 2>&1
+else
+	echo "" >> ~/.config/polybar/config
+fi
