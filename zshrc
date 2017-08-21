@@ -1,5 +1,4 @@
 # Lines configured by zsh-newuser-install
-(wal -a 80 -r &)
 setopt appendhistory extendedglob
 unsetopt beep
 # End of lines configured by zsh-newuser-install
@@ -28,8 +27,13 @@ zstyle ':completion:*' rehash true
 
 autoload -Uz compinit; compinit -i
 setopt complete_in_word
-autoload -Uz promptinit; promptinit; prompt pure
+autoload -Uz promptinit
+promptinit
 
+if [[ $TERM != "linux" ]]; then
+	prompt pure
+	(wal -a 80 -r &)
+fi
 # key-bindings (History search, del, etc)
 bindkey '^[[3~' delete-char
 bindkey '^[[A' history-beginning-search-backward
