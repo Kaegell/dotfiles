@@ -6,7 +6,7 @@
 wallpaper=$(cat ~/.cache/wal/wal)
 cp $wallpaper /home/kaegell/Pictures/Misc/lightdm.jpg
 i3-msg reload
-pres=$(pgrep foobar)
+pres=$(pgrep polybar)
 if [[ -z $pres ]]; then
 	polybar -r topbar& > /dev/null 2>&1
 else

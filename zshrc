@@ -30,7 +30,7 @@ setopt complete_in_word
 autoload -Uz promptinit
 promptinit
 
-if [[ $TERM != "linux" ]]; then
+if [[ $TERM != "linux" ]] && [[ $TERM != "fbterm" ]]; then
 	prompt pure
 	(wal -a 80 -r &)
 fi

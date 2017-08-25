@@ -67,7 +67,7 @@ tray-background = ${colors.background_i3wmthemer}
 font-0 = Sauce Code Powerline:antialias=true:pixelsize=12
 font-1 = SauceCodePro Nerd Font:antialias=true:pixelsize=18
 
-modules-left = eth-network wifi-network volume
+modules-left = wifi-network volume
 modules-center = i3
 modules-right = xkeyboard battery0 battery1 date
 
@@ -106,20 +106,13 @@ battery = BAT1
 [module/wifi-network]
 type = internal/network
 interface = wlp3s0
-accumulate-stats = false
-label-connected =  %downspeed%
-label-disconnected = 
+accumulate-stats = true
+label-connected =   %downspeed%  %upspeed%
+label-disconnected =  %downspeed%  %upspeed%
 format-connected = %{A1:networkmanager_dmenu &:}<label-connected>%{A}
 format-connected-underline = ${colors.color04_i3wmthemer}
 format-disconnected = %{A1:networkmanager_dmenu &:}<label-disconnected>%{A}
 format-disconnected-underline = ${colors.foreground_i3wmthemer}
-
-[module/eth-network]
-inherit=module/wifi-network
-interface = enp0s25
-label-connected =  %downspeed%
-label-disconnected = 
-accumulate-stats = true
 
 [module/volume]
 type = internal/volume
@@ -256,6 +249,8 @@ margin-top = 5
 margin-bottom = true 5
 
 ; vim:ft=dosini
+
+
 
 
 
