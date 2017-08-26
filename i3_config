@@ -68,6 +68,8 @@ assign [class="Dolphin-emu"]workspace 4
 assign [class="Eclipse"] workspace 5
 assign [class="Abiword"] workspace 5
 assign [class="Lmms"]workspace 6
+assign [class="qsynth"]workspace 6
+assign [class="drumkv1_jack"]workspace 6
 assign [class="qjackctl"]workspace 6
 assign [class="Chromium-browser" instance="crx_hecfofbbdfadifpemejbbdcjmfmboohj"]workspace 8
 assign [class="Mplayer"]workspace 8
@@ -77,6 +79,8 @@ assign [class="spotify"]workspace 9
 # Window set-ups
 for_window [class="Connman-gtk"] floating enable
 for_window [class="qjackctl"] floating enable
+for_window [class="qsynth"]floating enable
+for_window [class="drumkv1_jack"]floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Transmission-gtk"] floating enable
 for_window [class="Nautilus"] floating enable
