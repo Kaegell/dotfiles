@@ -17,6 +17,7 @@ setopt incappendhistory
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=100000
 export SAVEHIST=$HISTSIZE
+export EDITOR=nvim
 source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.config/zsh/zsh-autosuggestions.zsh
 
@@ -35,6 +36,7 @@ if [[ $TERM != "linux" ]] && [[ $TERM != "fbterm" ]]; then
 	(wal -a 80 -r &)
 fi
 # key-bindings (History search, del, etc)
+bindkey -e
 bindkey '^[[3~' delete-char
 bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward

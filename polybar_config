@@ -67,7 +67,7 @@ tray-background = ${colors.background_i3wmthemer}
 font-0 = Sauce Code Powerline:antialias=true:pixelsize=12
 font-1 = SauceCodePro Nerd Font:antialias=true:pixelsize=18
 
-modules-left = wifi-network volume
+modules-left = wifi-network pavolume
 modules-center = i3
 modules-right = xkeyboard battery0 battery1 date
 
@@ -113,6 +113,17 @@ format-connected = %{A1:networkmanager_dmenu &:}<label-connected>%{A}
 format-connected-underline = ${colors.color04_i3wmthemer}
 format-disconnected = %{A1:networkmanager_dmenu &:}<label-disconnected>%{A}
 format-disconnected-underline = ${colors.foreground_i3wmthemer}
+
+[module/pavolume]
+type = custom/script
+tail = true
+label = %output%
+exec = ~/.config/polybar/pavolume.sh --listen
+click-left = exec pavucontrol
+click-middle = ~/.config/polybar/pavolume.sh --togmute
+scroll-up = ~/.config/polybar/pavolume.sh --up
+scroll-down = ~/.config/polybar/pavolume.sh --down
+format-underline = ${colors.color04_i3wmthemer}
 
 [module/volume]
 type = internal/volume
@@ -169,9 +180,9 @@ ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
-ws-icon-4 = 5;
+ws-icon-4 = 5;
 ws-icon-5 = 6;
-ws-icon-6 = 7;
+ws-icon-6 = 7;
 ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
@@ -249,6 +260,31 @@ margin-top = 5
 margin-bottom = true 5
 
 ; vim:ft=dosini
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

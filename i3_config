@@ -27,7 +27,7 @@ set_from_resource $c8 i3wm.color8 #f0f0f0
 # class                 border			backgr.			text		 indicator		   child_border
 client.focused          $c1				$c1				$c6			 $c1			   $c1
 client.focused_inactive $c5				$c5				$c1			 $c5			   $c5
-client.unfocused        $c3				$c3				$c8			 $c3			   $c3
+client.unfocused        $c3				$c3				#00000000			 $c3			   $c3
 client.urgent           $c7				$c7				$c2			 $c7			   $c7
 client.placeholder      i3wm.color3     i3wm.color3     i3wm.color7  i3wm.color3       i3wm.color3
 
@@ -65,29 +65,38 @@ assign [class="Franz"]workspace 3
 assign [class="TeamSpeak 3"]workspace 3
 assign [class="Wine" instance="osu!.exe"]workspace 4
 assign [class="Dolphin-emu"]workspace 4
-assign [class="Eclipse"] workspace 5
 assign [class="Abiword"] workspace 5
+assign [class="Zathura"] workspace 5
 assign [class="Lmms"]workspace 6
 assign [class="qsynth"]workspace 6
 assign [class="drumkv1_jack"]workspace 6
 assign [class="qjackctl"]workspace 6
+assign [class="Atom"]workspace 7
+assign [class="Eclipse"] workspace 7
+assign [class="jetbrains-idea-ce"]workspace 7
 assign [class="Chromium-browser" instance="crx_hecfofbbdfadifpemejbbdcjmfmboohj"]workspace 8
 assign [class="Mplayer"]workspace 8
 assign [class="Vlc"]workspace 8
 assign [class="Sonata"]workspace 9
-assign [class="spotify"]workspace 9
+assign [class="Spotify"]workspace 9
 # Window set-ups
 for_window [class="Connman-gtk"] floating enable
 for_window [class="qjackctl"] floating enable
 for_window [class="qsynth"]floating enable
+for_window [class="Pavucontrol"]floating enable
 for_window [class="drumkv1_jack"]floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Transmission-gtk"] floating enable
 for_window [class="Nautilus"] floating enable
+for_window [class="Surf"] floating enable
+for_window [class="URxvt" title="floating"] floating enable
+for_window [class="URxvt" title="canto-curses"] floating enable
+for_window [class="Firefox" instance="Toplevel"] floating enable
+for_window [class="Firefox" instance="Toplevel"] sticky enable
 for_window [class="System-config-printer.py"] floating enable
-for_window [class="Spotify"] move to workspace 9
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec urxvt --title floating
 bindsym XF86PowerOff exec $HOME/.bin/rofi-power
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -209,12 +218,14 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 # Daemons
 exec --no-startup-id xset s off -dpms
 exec --no-startup-id compton -cCGb --xrender-sync --xrender-sync-fence
 # exec --no-startup-id sh ~/.conky/conky-startup.sh
-exec --no-startup-id wal -a 80 -i "$(< "${HOME}/.cache/wal/wal")" -o ~/.config/i3/apply_wal_scheme
+exec --no-startup-id wal -a 80 -i "$(< "${HOME}/.cache/wal/wal")"
 exec --no-startup-id mate-power-manager
 exec --no-startup-id blueman-applet
 exec --no-startup-id xss-lock -- i3lock-fancy -t "Try me" -g -p -f Source-Code-Pro-for-Powerline -- scrot
