@@ -23,6 +23,10 @@
 		{
 			"file":		"i3_wal_script",
 			"target":	"~/.config/i3/apply_wal_scheme"
+		},
+		{
+			"file":		"pavolume.sh",
+			"target":	"~/.config/polybar/pavolume.sh"
 		}
 	]
 }
