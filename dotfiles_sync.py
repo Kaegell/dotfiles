@@ -11,17 +11,21 @@ with open('map.json') as js_file:
     data = json.load(js_file)
 
 for elm in data["map"]:
-    str = "{0} -> {1}".format(elm["file"],elm["target"])
-    print(str)
-    ln_cmd = "ln -rsf ./{0} {1}".format(elm["file"],\
-            os.path.expanduser(elm["target"]))
-    p = subprocess.Popen(ln_cmd.split(), stdout=subprocess.PIPE)
-    out,err = p.communicate()
-    if err == None:
-        print("symlinking successful\n")
+    test = os.path.exists(os.path.expanduser(elm["target"]))
+    if test is False:
+        str = "{0} -> {1}".format(elm["file"],elm["target"])
+        print(str)
+        ln_cmd = "ln -rsf ./{0} {1}".format(elm["file"],\
+                os.path.expanduser(elm["target"]))
+        p = subprocess.Popen(ln_cmd.split(), stdout=subprocess.PIPE)
+        out,err = p.communicate()
+        if err == None:
+            print("symlinking successful\n")
+        else:
+            print("symlinking failed")
+            exit(1)
     else:
-        print("symlinking failed")
-        exit(1)
+        print("Already symlinked :D")
 print("all done :)")
 exit(0)
 
