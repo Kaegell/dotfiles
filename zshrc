@@ -1,3 +1,6 @@
+if [[ $TERM != "linux" ]] && [[ $TERM != "fbterm" ]]; then
+	(wal -a 80 -r &)
+fi
 # Lines configured by zsh-newuser-install
 setopt appendhistory extendedglob
 unsetopt beep
@@ -33,7 +36,6 @@ promptinit
 
 if [[ $TERM != "linux" ]] && [[ $TERM != "fbterm" ]]; then
 	prompt pure
-	(wal -a 80 -r &)
 fi
 # key-bindings (History search, del, etc)
 bindkey -e
