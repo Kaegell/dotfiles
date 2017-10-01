@@ -60,7 +60,7 @@ module-margin-right = 1
 tray-offset-x = 0%
 tray-offset-y = 0%
 tray-maxsize = 18
-tray-transparent = flase
+tray-transparent = true
 tray-detached = false
 tray-background = ${colors.background_i3wmthemer}
 
