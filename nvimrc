@@ -1,6 +1,7 @@
 "basics
 syntax on
 set number
+set termencoding=latin1
 
 set tabstop=4
 set softtabstop=4
@@ -15,7 +16,8 @@ set wildmode=longest:list:full
 set shell=/bin/bash
 setlocal foldmethod=indent
 set foldlevel=99
-
+map <F2> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 filetype plugin indent on
 "hi CursorLine term=bold cterm=bold ctermbg=Gray
 colorscheme wal
