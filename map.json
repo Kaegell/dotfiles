@@ -22,7 +22,7 @@
 		},
 		{
 			"file":		"wal-set",
-			"target":	"~/.config/i3/wal_set"
+			"target":	"~/.config/i3/wal-set"
 		},
 		{
 			"file":		"pavolume.sh",
