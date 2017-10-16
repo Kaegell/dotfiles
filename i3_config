@@ -27,14 +27,13 @@ set_from_resource $c8 i3wm.color8 #f0f0f0
 # class                 border			backgr.			text		 indicator		   child_border
 client.focused          $c4				$c4				$c0			 $c1			   $c1
 client.focused_inactive $c4				$c4				$c0			 $c5			   $c5
-client.unfocused        $c3				$c3				#00000000			 $c3			   $c3
+client.unfocused        $c0				$c0				$c7			 $c0			   $c0
 client.urgent           $c7				$c7				$c0			 $c7			   $c7
 client.placeholder      i3wm.color3     i3wm.color3     i3wm.color7  i3wm.color3       i3wm.color3
 
 set $mod Mod4
-new_window pixel 1
-new_float pixel 1
-gaps inner 5
+new_window none
+new_float none
 smart_borders on
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -74,6 +73,7 @@ assign [class="qjackctl"]workspace 6
 assign [class="Atom"]workspace 7
 assign [class="Eclipse"] workspace 7
 assign [class="graal.xrdb"]workspace 7
+assign [class="Gtkwave"]workspace 7
 assign [class="jetbrains-idea-ce"]workspace 7
 assign [class="Chromium-browser" instance="crx_hecfofbbdfadifpemejbbdcjmfmboohj"]workspace 8
 assign [class="Mplayer"]workspace 8
@@ -223,7 +223,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 # Daemons
-exec --no-startup-id xset s off -dpms
+# exec --no-startup-id xset s off -dpms
 exec --no-startup-id compton --config ~/.config/compton.conf -cCGb --xrender-sync --xrender-sync-fence
 # exec --no-startup-id sh ~/.conky/conky-startup.sh
 exec --no-startup-id wal -a 80 -i "$(< "${HOME}/.cache/wal/wal")" -o $HOME/.config/i3/wal-set
