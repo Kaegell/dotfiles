@@ -1,8 +1,8 @@
 {
 	"map": [
 		{
-			"file":		"nvimrc",
-			"target":	"~/.config/nvim/init.vim"
+			"file":		"vimrc",
+			"target":	"~/.vimrc"
 		},
 		{
 			"file":		"polybar_config",
