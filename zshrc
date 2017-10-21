@@ -7,6 +7,10 @@ unsetopt beep
 fpath=(~/.config/zsh $fpath)
 
 # Prettify (syntax highlighting, completion, prompt, etc)
+set meta-flag on
+set input-meta on
+set output-meta on
+set convert-meta on
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
@@ -31,7 +35,7 @@ setopt complete_in_word
 autoload -Uz promptinit
 promptinit
 
-if [[ $TERM != "linux" ]] && [[ $TERM != "fbterm" ]]; then
+if [[ $TERM != "linux" ]]; then
 	prompt pure
 	export KEYTIMEOUT=1
 	VIM_PROMPT="❯"
@@ -56,16 +60,14 @@ fi
 # key-bindings (History search, del, etc)
 bindkey -v
 bindkey '^[[3~' delete-char
-bindkey '^[[A' history-beginning-search-backward
-bindkey '^[[B' history-beginning-search-forward
+bindkey '^[[5~' history-beginning-search-backward
+bindkey '^[[6~' history-beginning-search-forward
 bindkey '^[Od' backward-word
 bindkey '^[Oc' forward-word
 bindkey '^H' backward-kill-word
 bindkey '^[[3^' kill-word
-bindkey "^[[5~" beginning-of-history
-bindkey "^[[6~" end-of-history
 export PATH="$HOME/.bin:$HOME/.bin/alliance/install/bin:$PATH"
-export LANG=en_US.UTF-8
+#export LANG=en_US.UTF-8
 
 # User variables /aliases
 function mkcd {
