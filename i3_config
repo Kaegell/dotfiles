@@ -227,7 +227,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 exec --no-startup-id compton --config ~/.config/compton.conf -cCGb --xrender-sync --xrender-sync-fence
 # exec --no-startup-id sh ~/.conky/conky-startup.sh
 exec --no-startup-id wal -a 80 -i "$(< "${HOME}/.cache/wal/wal")" -o $HOME/.config/i3/wal-set
-exec --no-startup-id mate-power-manager
 exec --no-startup-id blueman-applet
 exec --no-startup-id xss-lock -- i3lock-fancy -t "Try me" -g -p -f Source-Code-Pro-for-Powerline -- scrot
 exec --no-startup-id devmon
