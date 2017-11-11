@@ -1,0 +1,56 @@
+#!/bin/sh
+
+export confdir=$HOME/.config/musync
+
+while test $# -gt 0
+do
+	case "$1" in
+		create-list)
+			shift
+			if [[ $1 == "" ]] || [[ $1 == -* ]]; then
+				echo "specify a list name, you prick"
+				exit 1
+			else
+				if [[ -d $confdir/$1 ]]; then
+					echo "the sync list already exists"
+					exit 1
+				else
+					mkdir -p $confdir/$1
+					file=$confdir/$1/parameters
+					echo "name=$1" >> $file
+					touch $confdir/$1/files
+					echo "created the sync list \"$1\""
+				fi
+			fi
+			exit 0;;
+			
+		delete-list)
+			shift
+			if [[ $1 == "" ]] || [[ $1 == -* ]]; then
+				echo "specify a list name, you prick"
+				exit 1
+			else
+				if [[ -d $confdir/$1 ]]; then
+					rm -rf $confdir/$1
+					echo "sync list \"$1\" successfully deleted"
+				else
+					echo "sync list \"$1\" not found"
+					exit 1
+				fi
+			fi
+			exit 0;;
+
+		list-lists)
+			for dir in $(ls $confdir); do
+				echo $dir
+			done
+			break;;
+
+		on-list)
+			shift; musync-operations $@
+			exit 0;;
+		*)
+			echo "error in arguments"
+			exit 1;;
+	esac
+done

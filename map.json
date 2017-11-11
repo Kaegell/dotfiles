@@ -25,12 +25,29 @@
 			"target":	"~/.config/i3/wal-set"
 		},
 		{
+			"file":		"i3lock-wal",
+			"target":	"~/.config/i3/i3lock-wal"
+		},
+		{
 			"file":		"pavolume.sh",
 			"target":	"~/.config/polybar/pavolume.sh"
 		},
 		{
 			"file":		"compton.conf",
 			"target":	"~/.config/compton.conf"
+		},
+		{
+			"file":		"Xresources",
+			"target":	"~/.Xresources"
+		},
+		{
+			"file":		"musync",
+			"target":	"~/.bin/musync"
+		},
+		{
+			"file":		"musync-operations",
+			"target":	"~/.bin/musync-operations"
 		}
+
 	]
 }

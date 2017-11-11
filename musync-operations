@@ -1,0 +1,41 @@
+#!/bin/sh
+
+if [[ ! -d $confdir/$1 ]]; then
+	echo "list \"$1\" not found"
+	exit 1
+fi
+
+file=$confdir/$1/files
+
+shift
+case "$1" in
+	--add)
+		shift
+		while test $# -gt 0; do
+			if [[ ! -e $1 ]]; then
+				echo "| file \"$1\" not found"
+				echo
+			else
+				echo "$(realpath $1)" >> $file
+				echo "| file \"$1\" added"
+				echo
+			fi
+			shift
+		done
+		exit 0;;
+	--delete)
+		shift
+		while test $# -gt 0; do
+
+			shift
+		done
+		exit 0;;
+	--print)
+		shift
+		cat -n $file
+		exit 0;;
+	*)
+		echo "unknown operation"
+		exit 1
+		;;
+esac

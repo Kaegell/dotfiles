@@ -8,8 +8,9 @@
 ;=====================================================
 
 [colors]
-foreground = ${xrdb:color7}
-background = ${xrdb:color0}
+foreground = #cccccc
+foreground-alt = #000000
+background = #ab000000
 
 primary = #ffb52a
 secondary = #e60053
@@ -17,24 +18,21 @@ alert = #bd2c40
 
 [settings]
 ;screenchange-reload = true
-compositing-background = source
-compositing-foreground = source
+;compositing-background = xor
+;compositing-foreground = clear
 ;compositing-overline = xor
 ;compositing-underline = xor
 ;compositing-border = xor
 format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+;format-background = ${colors.background}
 
 [bar/topbar]
 width = 100%
 height = 30
-border-top-size = 3
-border-top-color = ${colors.background}
 bottom = false
 offset-x = 0%
 offset-y = 0%
 radius = 0
-line-size=4
 fixed-center = true
 
 background = ${colors.background}
@@ -149,13 +147,13 @@ workspace-label = %icon%
 ; pin-workspaces = true
 
 label-mode-padding = 0
-label-focused-padding = 1
-label-unfocused-padding = 1
-label-urgent-padding = 1
+label-focused-padding = 2
+label-unfocused-padding = 2
+label-urgent-padding = 2
 
-label-focused-underline = ${colors.foreground}
-label-urgent-background = ${colors.foreground}
-label-urgent-foreground = ${colors.background}
+label-focused-underline = ${colors.foreground-alt}
+label-focused-foreground = ${colors.foreground-alt}
+label-focused-background = ${colors.foreground}
 
 [module/date]
 type = internal/date
