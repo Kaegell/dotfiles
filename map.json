@@ -41,6 +41,10 @@
 			"target":	"~/.Xresources"
 		},
 		{
+			"file":		"rofi-power",
+			"target":	"~/.bin/rofi-power"
+		},
+		{
 			"file":		"musync",
 			"target":	"~/.bin/musync"
 		},
