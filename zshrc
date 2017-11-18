@@ -78,4 +78,4 @@ export WINEPREFIX="$HOME/.config/wine"
 alias ncanto='canto-curses'
 alias ls='ls --color=auto'
 alias la='ls -al'
-alias expac-list-'expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n'
+alias expac-list='expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n'
