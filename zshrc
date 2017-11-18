@@ -25,12 +25,12 @@ export EDITOR=nvim
 source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.config/zsh/zsh-autosuggestions.zsh
 
+autoload -Uz compinit && compinit 
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' menu select
 zstyle ':completion:*' rehash true
 
-autoload -Uz compinit; compinit -i
 setopt complete_in_word
 autoload -Uz promptinit
 promptinit
@@ -75,7 +75,7 @@ function mkcd {
 	mkdir -p "$dir" && cd "$dir"
 }
 export WINEPREFIX="$HOME/.config/wine"
-export PAGER='most'
 alias ncanto='canto-curses'
 alias ls='ls --color=auto'
 alias la='ls -al'
+alias expac-list-'expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n'

@@ -34,6 +34,7 @@ vnoremap <Up> <NOP>
 vnoremap <Down> <NOP>
 vnoremap <Left> <NOP>
 vnoremap <Rvght> <NOP>
+cmap w!! w !sudo tee > /dev/null %
 
 call plug#begin('~/.vim/plugged')
 Plug 'Shougo/deoplete.nvim'
