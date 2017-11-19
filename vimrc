@@ -1,7 +1,7 @@
 "basics
 syntax on
 set number
-+set relativenumber
+set relativenumber
 
 
 augroup numbertoggle
@@ -53,6 +53,7 @@ Plug 'vim-utils/vim-man'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dylanaraps/wal.vim'
 call plug#end()
