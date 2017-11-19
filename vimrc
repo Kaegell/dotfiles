@@ -1,11 +1,20 @@
 "basics
 syntax on
 set number
++set relativenumber
+
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 
 set tabstop=4
-set softtabstop=4
+set softtabstop=0 expandtab
 set shiftwidth=4
+set scrolloff=5
 set smarttab
 " set mouse=a
 let base16colorspace=256
@@ -18,7 +27,6 @@ set foldlevel=99
 map <F2> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 filetype plugin indent on
-"hi CursorLine term=bold cterm=bold ctermbg=Gray
 colorscheme wal
 
 " Hard Mode activated
