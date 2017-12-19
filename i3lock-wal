@@ -2,6 +2,7 @@
 
 if ! [[ -f /tmp/lock.png ]]; then
     RES=$(xrandr | fgrep '*' | cut -d' ' -f4)
-    convert -resize $RES "$(< ~/.cache/wal/wal)" /tmp/lock.png
+    convert -resize $RES! "$(< ~/.cache/wal/wal)" -extent $RES \
+        -set colorspace Gray -separate -average /tmp/lock.png
 fi
 i3lock -i /tmp/lock.png
