@@ -16,11 +16,12 @@ reload_dunst() {
         -bf "${color15:=#000000}" \
         -cf "${color15:=#000000}" \
         -nf "${color15:=#000000}" \
-        -fn "${DUNST_FONT:-Artwiz Lemon 7}" \
+        -fn "${DUNST_FONT:-mononoki Nerd Font 9}" \
         -geometry "${DUNST_SIZE:-300x30-40+70}" &
 }
 main() {
     reload_dunst &
 }
 
+rm /tmp/lock.png
 main

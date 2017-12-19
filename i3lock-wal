@@ -1,3 +1,7 @@
 #!/bin/sh
 
-i3lock --color $(cat ~/.cache/wal/colors)
+if ! [[ -f /tmp/lock.png ]]; then
+    RES=$(xrandr | fgrep '*' | cut -d' ' -f4)
+    convert -resize $RES "$(< ~/.cache/wal/wal)" /tmp/lock.png
+fi
+i3lock -i /tmp/lock.png
